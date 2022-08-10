@@ -1,0 +1,35 @@
+
+[tool.poetry]
+name = "volosti"
+version = "0.1.dev0"
+description = "Метапакет запланированного проекта"
+license = "MIT"
+
+authors = [
+    "Ruslan Ilyasovich Gilfanov <ri.gilfanov@yandex.ru>",
+]
+maintainers = [
+    "Ruslan Ilyasovich Gilfanov <ri.gilfanov@yandex.ru>",
+]
+
+readme = "README.rst"
+homepage = "https://pypi.org/project/volosti"
+repository = "https://github.com/volosti/volosti"
+
+keywords = []
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Russian",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
