@@ -1,8 +1,8 @@
 
 [tool.poetry]
 name = "volosti"
-version = "0.1.dev0"
-description = "Метапакет запланированного проекта"
+version = "0.1.dev1"
+description = "Метапакет разрабатываемого проекта"
 license = "MIT"
 
 authors = [
@@ -18,7 +18,7 @@ repository = "https://github.com/volosti/volosti"
 
 keywords = []
 classifiers = [
-    "Development Status :: 1 - Planning",
+    "Development Status :: 2 - Pre-Alpha",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: Russian",
     "Programming Language :: Python",
@@ -29,6 +29,18 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.9"
+gunicorn = { version = "^20.1.0", optional = true }
+uvicorn = { version = ">=0.18.2", optional = true }
+volosti-server-sanic = { version = "^0", optional = true, allow-prereleases = true }
+volosti-server-starlette = { version = "^0", optional = true, allow-prereleases = true }
+
+[tool.poetry.extras]
+all = [
+    "gunicorn",
+    "uvicorn",
+    "volosti-server-sanic",
+    "volosti-server-starlette",
+]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
