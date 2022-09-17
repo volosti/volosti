@@ -1,7 +1,7 @@
 
 [tool.poetry]
 name = "volosti"
-version = "0.1.dev1"
+version = "0.1.dev2"
 description = "Метапакет разрабатываемого проекта"
 license = "MIT"
 
@@ -29,15 +29,43 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.9"
+aiosqlite = { version = ">=0.17.0", optional = true }
+asyncpg = { version = ">=0.26.0", optional = true }
+cryptography = { version = "^37.0.4", optional = true }
 gunicorn = { version = "^20.1.0", optional = true }
+hypercorn = { version = ">=0.13.2", optional = true }
+jinja2 = { version = "^3.1.2", optional = true }
+pycryptodome = { version = "^3.15.0", optional = true }
+python-multipart = { version = "*", optional = true }
 uvicorn = { version = ">=0.18.2", optional = true }
+volosti-gui-kivy = { version = "^0", optional = true, allow-prereleases = true }
 volosti-server-sanic = { version = "^0", optional = true, allow-prereleases = true }
 volosti-server-starlette = { version = "^0", optional = true, allow-prereleases = true }
 
 [tool.poetry.extras]
+gunicorn = ["gunicorn"]
+gui-kivy = ["volosti-gui-kivy"]
+hypercorn = ["hypercorn"]
+openssl = ["cryptography"]
+postgresql = ["asyncpg"]
+pycryptodome = ["pycryptodome"]
+server-sanic = ["volosti-server-sanic"]
+server-sanic-wui = ["volosti-server-sanic", "jinja2"]
+sqlite = ["aiosqlite"]
+server-starlette = ["volosti-server-starlette"]
+server-starlette-wui = ["volosti-server-starlette", "jinja2", "python-multipart"]
+uvicorn = ["uvicorn"]
 all = [
+    "aiosqlite",
+    "asyncpg",
+    "cryptography",
     "gunicorn",
+    "hypercorn",
+    "jinja2",
+    "pycryptodome",
+    "python-multipart",
     "uvicorn",
+    "volosti-gui-kivy",
     "volosti-server-sanic",
     "volosti-server-starlette",
 ]
